@@ -1,0 +1,76 @@
+.app__main {
+  padding: 2em;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.app__title {
+  text-align: center;
+  margin-block-end: 1.7em;
+}
+
+.quote {
+  --quote--size: 2rem;
+  font-size: var(--quote--size);
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.8px;
+  text-wrap: balance;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 8px;
+}
+
+.typing__word {
+  &.typing__word-wrong {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #ca4754;
+  }
+
+}
+
+.typing__letter {
+  position: relative;
+  overflow: hidden;
+
+  &.active::before {
+    content: '|';
+    display: inline-block;
+    position: absolute;
+    transform: translateX(-42%);
+    color: yellow;
+    font-size: calc(var(--quote--size) - 4px);
+    animation: blink 800ms infinite ease-in;
+  }
+
+  &.correct {
+    color: white;
+  }
+
+  &.incorrect {
+    color: #ca4754;
+  }
+
+  &.active.last::before {
+    right: 0;
+    transform: translateX(42%);
+  }
+}
+
+.typed__input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes blink {
+  %, 25% {
+    opacity: 1;
+  }
+  75% {
+      opacity: 0;
+  }
+}
