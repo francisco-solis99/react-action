@@ -1,0 +1,4 @@
+packages:
+  - 'projects/01-memory-game'
+  - 'projects/02-quote-typing'
+  - 'projects/03-hangman'
