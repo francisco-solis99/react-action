@@ -114,7 +114,7 @@ function App() {
   return (
     <div className="app__wrapper">
       <main className="app__main">
-        <h1 className="app__title">QuoteType</h1>
+        <h1 className="app__title">QuoteType ✒️</h1>
         <input
           type="text"
           autoFocus={true}
